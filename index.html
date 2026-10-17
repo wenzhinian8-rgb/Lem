@@ -69,22 +69,22 @@ svg.i{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.6;stro
 .g3{background:linear-gradient(120deg,#fff 0 30%,#222 31% 60%,#e7e7e7 61%)}
 .g4{background:radial-gradient(circle at 50% 45%,#fff 0 25%,#666 60%,#111)}
 /* mini */
-.mini{z-index:1;overflow:hidden;white-space:nowrap;left:26px;bottom:71px;width:337px;height:45px;border-radius:23px;background:#fff;box-shadow:0 8px 22px rgba(0,0,0,.07);display:flex;align-items:center;font-size:12px}
+.mini{z-index:1;overflow:hidden;white-space:nowrap;left:26px;bottom:calc(var(--nb,12px) + 59px);width:337px;height:45px;border-radius:23px;background:#fff;box-shadow:0 8px 22px rgba(0,0,0,.07);display:flex;align-items:center;font-size:12px}
 .mini .av{width:28px;height:28px;border-radius:50%;margin-left:14px;background:radial-gradient(circle at 45% 40%,#fff 0 20%,#999 50%,#222)}
 .mini .ic{width:22px;height:22px;margin-left:14px;border-radius:7px;box-shadow:0 0 0 1px #e6e6e6;padding:4px;color:#333}
 .mini b{font-weight:500;margin-left:14px;letter-spacing:.6px;font-size:13px}
 .mini i{width:1px;height:16px;background:#ddd;margin:0 14px 0 14px}
 .mini span{min-width:0;overflow:hidden;text-overflow:ellipsis;padding-right:16px;color:#8a8a8a;letter-spacing:.8px;font-size:11.5px}
 /* nav */
-.nl{left:24px;bottom:12px;width:73px;height:50px;border-radius:25px;background:#efefef;box-shadow:inset 0 0 0 1px #e1e1e1,0 6px 16px rgba(0,0,0,.04);display:grid;place-items:center}
+.nl{left:24px;bottom:var(--nb,12px);width:73px;height:50px;border-radius:25px;background:#efefef;box-shadow:inset 0 0 0 1px #e1e1e1,0 6px 16px rgba(0,0,0,.04);display:grid;place-items:center}
 .nl .ic{width:22px;height:22px;color:#222}
 .nl .bd{position:absolute;right:11px;top:6px;width:15px;height:15px;border-radius:50%;background:#2b2b2b;color:#fff;font-size:8px;display:grid;place-items:center;font-weight:700}
-.nr{left:109px;bottom:12px;width:257px;height:50px;border-radius:25px;background:#fff;box-shadow:0 8px 22px rgba(0,0,0,.05)}
+.nr{left:109px;bottom:var(--nb,12px);width:257px;height:50px;border-radius:25px;background:#fff;box-shadow:0 8px 22px rgba(0,0,0,.05)}
 .nr .ic{position:absolute;top:14px;width:22px;height:22px;color:#111}
 .nr .pair{position:absolute;left:204px;top:0;width:0}
 .pav{position:absolute;top:10px;width:30px;height:30px;border-radius:50%;box-shadow:0 0 0 1px #ddd}
 .nr .hb{position:absolute;right:16px;white-space:nowrap;top:14px;font-size:13px;font-weight:700;color:#222}
-.tab{left:366px;bottom:143px;width:34px;height:57px;border-radius:14px;background:rgba(235,235,235,.85);box-shadow:inset 0 0 0 1px #e4e4e4;display:grid;place-items:center}
+.tab{left:366px;bottom:calc(var(--nb,12px) + 131px);width:34px;height:57px;border-radius:14px;background:rgba(235,235,235,.85);box-shadow:inset 0 0 0 1px #e4e4e4;display:grid;place-items:center}
 .tab span{writing-mode:vertical-rl;font-family:Georgia,serif;font-size:11px;letter-spacing:2px;color:#888}
 /* chat page */
 .chat{position:absolute;inset:0;background:var(--bg);display:none;flex-direction:column;z-index:9}
@@ -102,7 +102,7 @@ svg.i{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.6;stro
 .sheet button.g{background:#eee;color:#333}
 .sheet p{margin:0;font-size:10.5px;color:#aaa;line-height:1.5}
 
-.list{left:0;right:0;top:284px;bottom:124px;overflow-y:auto;padding-bottom:24px;scrollbar-width:none}
+.list{left:0;right:0;top:284px;bottom:calc(var(--nb,12px) + 112px);overflow-y:auto;padding-bottom:24px;scrollbar-width:none}
 .list::-webkit-scrollbar{display:none}
 .sec{position:static!important;transform:none!important;height:30px;line-height:30px;padding-left:38px}
 .card{position:relative!important;margin:4px 29px 2px;left:auto!important;top:auto!important;height:auto!important}
@@ -376,6 +376,47 @@ mark{background:rgba(255,214,120,.7);color:inherit;border-radius:3px;padding:0 1
 .clf{font-size:10px;color:#b0a0a4;margin-top:6px;padding-top:5px;border-top:1px solid rgba(0,0,0,.06)}
 .selbar button{padding:0 11px;margin-left:5px}
 .dj{display:flex;align-items:center;gap:10px;margin:0 2px 12px;font-size:12.5px;color:#888}.dj input{flex:1;min-width:0;height:36px;border-radius:18px;border:0;padding:0 14px;background:#fff;font:16px 'Quicksand',sans-serif;box-shadow:0 0 0 1px #e8e8e8;outline:none}
+/* 修复：长名字撑宽网格、页面可横向拖动 */
+.sg{grid-template-columns:repeat(4,minmax(0,1fr))}.stt{min-width:0}
+.eg{grid-template-columns:repeat(8,minmax(0,1fr))}.eg.s{grid-template-columns:repeat(4,minmax(0,1fr))}
+.pg>div{grid-template-columns:repeat(4,minmax(0,1fr))}.it{min-width:0}.it span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sub .body,.msgs,.me,.list{overflow-x:hidden}
+html,body{overflow-x:hidden}.app,.sub,.chat{touch-action:pan-y}
+.mr .lb{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-style:normal}
+.mr em.dtl{max-width:46%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chks{display:flex;flex-direction:column;gap:6px;max-height:170px;overflow:auto;background:#f3f3f3;border-radius:12px;padding:9px 12px}
+.chks label{display:flex;align-items:center;gap:8px;font-size:13px;color:#333;letter-spacing:0}
+.chks input{width:auto;flex:none;margin:0}
+/* 世界书：黑白文件夹卡片 */
+.wbh{padding:4px 4px 12px}.wbh b{display:block;font:700 13px 'Courier New',monospace;letter-spacing:3px;color:#111}
+.wbh small{display:block;margin-top:6px;font-size:11.5px;line-height:1.6;color:#777}
+.wbt{display:flex;gap:8px;margin-bottom:10px}
+.wbt button{flex:1;height:38px;border:1.5px solid #111;border-radius:12px;background:#fff;color:#111;font:600 12.5px 'Quicksand','PingFang SC',sans-serif}
+.wbt button:first-child{flex:2;background:#111;color:#fff}
+.wbs{font:700 11px 'Courier New',monospace;letter-spacing:2px;color:#111;margin:18px 2px 4px}
+.wbe{border:1.5px dashed #b8b8b8;border-radius:14px;padding:16px;text-align:center;font-size:12px;color:#aaa;margin-top:12px}
+.fd{position:relative;margin:20px 0 10px;--ink:#111;--paper:#fff}
+.fdt{position:absolute;top:-13px;left:16px;width:84px;height:14px;border:1.5px solid #111;border-bottom:0;border-radius:9px 9px 0 0;background:#fff;transition:background .2s}
+.fdb{border:1.5px solid #111;border-radius:0 18px 18px 18px;background:#fff;color:#111;box-shadow:4px 4px 0 #111;transition:background .2s,color .2s}
+.fdh{display:flex;align-items:center;gap:10px;padding:15px 16px;cursor:pointer}
+.fdn{flex:1;min-width:0}.fdn b{display:block;font-size:15px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fdn small{display:block;font-size:11px;opacity:.62;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fdc{display:none;padding:0 14px 14px}
+.fd.open .fdb{background:#111;color:#fff;--ink:#fff;--paper:#111}.fd.open .fdt{background:#111}
+.fd.open .fdc{display:block;animation:fdo .24s ease}@keyframes fdo{from{opacity:0;transform:translateY(-6px)}}
+.fd.off .fdb{opacity:.5}
+.sw{flex:none;width:36px;height:21px;border-radius:11px;border:1.5px solid var(--ink,#111);position:relative;cursor:pointer;transition:background .15s}
+.sw::after{content:'';position:absolute;left:2px;top:2px;width:14px;height:14px;border-radius:50%;background:var(--ink,#111);transition:left .15s,background .15s}
+.sw.on{background:var(--ink,#111)}.sw.on::after{left:17px;background:var(--paper,#fff)}
+.fl2{--ink:#111;--paper:#fff;position:relative;background:#fff;color:#111;border-radius:10px;padding:11px 74px 11px 13px;margin-top:9px;cursor:pointer;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%)}
+.fl2::after{content:'';position:absolute;top:0;right:0;width:16px;height:16px;background:linear-gradient(225deg,transparent 50%,#cfcfcf 50%)}
+.fl2 b{display:block;font-size:13px;font-weight:700}.fl2 .sw{position:absolute;right:24px;top:12px}
+.tgs{margin-top:5px}.tg{display:inline-block;font:600 9.5px 'Courier New',monospace;border:1px solid #111;border-radius:6px;padding:1px 6px;margin:0 4px 0 0}.tg.k{border-style:dashed;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom}
+.fl2 p{margin:6px 0 0;font-size:11.5px;color:#666;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-word}
+.wbe2{font-size:12px;color:#888;padding:10px 2px}
+.fda{display:flex;gap:8px;margin-top:12px}
+.fda button{flex:1;min-width:0;height:34px;border:1.5px solid #fff;border-radius:10px;background:transparent;color:#fff;font:600 12px 'Quicksand','PingFang SC',sans-serif;padding:0}
+.fda button.red{color:#ff8d82;border-color:#ff8d82}
 </style>
 </head>
 <body>
@@ -426,7 +467,7 @@ mark{background:rgba(255,214,120,.7);color:inherit;border-radius:3px;padding:0 1
 <div class="app" id="app">
   <div class="ghost a" style="left:-4px;top:100px">Love brings pain to the brink of death</div>
   <div class="ghost a" style="left:-4px;top:150px;font-size:11px">Message</div>
-  <div class="ghost a" style="left:96px;bottom:147px;font-size:10px;color:rgba(0,0,0,.06)">Tears are the sutures in your sorrowful life</div>
+  <div class="ghost a" style="left:96px;bottom:calc(var(--nb,12px) + 135px);font-size:10px;color:rgba(0,0,0,.06)">Tears are the sutures in your sorrowful life</div>
 
   <div class="circle a" id="meAv" style="overflow:hidden;left:38px;top:7px;width:39px;height:39px;padding:11px"><svg class="i"><use href="#user"/></svg></div>
   <div class="title a" id="nick">Lumière</div>
@@ -561,10 +602,11 @@ if(!accs.some(function(a){return a.id===ACC}))ACC=accs[0].id;
 accs.forEach(function(a){if(a.nick==='vls'+'ova'||a.nick==='Vesp'+'er'){a.nick='Lumière';LS.set('accs',accs)}});
 var prof=accs.filter(function(a){return a.id===ACC})[0];
 /* 发给 AI 的系统提示 = 内置提示词 + Char 人设 + user 人设 */
-function sysFor(c){
+function sysFor(c,hh){
   var up=(c&&c.upersona)||prof.persona,cm=c&&c.callme;
   return [BUILTIN_SYSTEM,
     c&&c.persona?'【角色设定】\n你的名字：'+c.name+'\n'+c.persona:'',
+    wbText(c,hh).trim(),
     (up||cm||(c&&c.unick))?'【用户人设】\n用户的昵称：'+un(c)+(cm?'\n你平时称呼对方为：'+cm:'')+(up?'\n'+up:''):''].filter(Boolean).join('\n\n')}
 var GROUPS=['Soul Echo♡','Soliloquy☆','Cat mailboxʚ','HiiiiHellovo…'];
 var contacts=LS.get('contacts',[])||[];
@@ -928,7 +970,7 @@ async function aiReply(){
   if(hh.some(needsLink)){setBusy(true);var tr0=row({role:'assistant',content:''},-1,true);msgs.appendChild(tr0);toBottom();await ensureLinks(hh);tr0.remove();setBusy(false)}
   var h=apiHist(hh);if(!h.length)return;addRem(h);avNote(h,c);
   var mb=memBlock(c,hh),mmap=memMap.slice();
-  var sys=(sysFor(c)+mb+extraText(c)+timeBlock(hh)+FMT).trim();
+  var sys=(sysFor(c,hh)+mb+extraText(c)+timeBlock(hh)+FMT).trim();
   var tr=row({role:'assistant',content:''},-1,true);msgs.appendChild(tr);toBottom();
   var got='',failed=false;ctl=new AbortController();cancelDeliver=false;flush=false;setBusy(true);
   try{await callAI(h,sys,function(t){got+=t},ctl.signal)}
@@ -958,7 +1000,7 @@ async function proactive(c){
   c.proT=Date.now();LS.set('contacts',contacts);
   var h=apiHist(hh);h.push({role:'user',content:'（系统提示：对方已经'+gapText(silent)+'没有回复。请你按照人设，自然地主动发起一次聊天。）'});addRem(h);avNote(h,c);
   var mb=memBlock(c,hh),mmap=memMap.slice();
-  var sys=(sysFor(c)+mb+extraText(c)+PRO+timeBlock(hh,silent)+FMT).trim();
+  var sys=(sysFor(c,hh)+mb+extraText(c)+PRO+timeBlock(hh,silent)+FMT).trim();
   var tr=null;if(same()){tr=row({role:'assistant',content:''},-1,true);msgs.appendChild(tr);toBottom()}
   var got='';ctl=new AbortController();cancelDeliver=false;flush=false;setBusy(true);
   try{await callAI(h,sys,function(t){got+=t},ctl.signal)}catch(e){ctl=null;if(tr)tr.remove();setBusy(false);return}
@@ -1082,6 +1124,10 @@ function form(title,fields,cb,okText){
   $('gsheet').querySelector('.bt').style.display='';$('gT').textContent=title;var F=$('gF');F.innerHTML='';$('gNo').style.display='';var opens=[];
   fields.forEach(function(f){
     var l=document.createElement('label');l.textContent=f.label;F.appendChild(l);var e;
+    if(f.type==='checks'){var bx=document.createElement('div');bx.id='g_'+f.k;bx.className='chks';
+      if(!f.options.length){bx.textContent='（没有可选项）';bx.style.color='#aaa'}
+      f.options.forEach(function(o){var lab=document.createElement('label'),ck=document.createElement('input');ck.type='checkbox';ck.value=o.v;if((f.value||[]).indexOf(o.v)>-1)ck.checked=true;lab.appendChild(ck);lab.appendChild(document.createTextNode(o.t));bx.appendChild(lab)});
+      F.appendChild(bx);return}
     if(f.type==='select'){e=document.createElement('select');f.options.forEach(function(o){var op=document.createElement('option');op.value=o.v;op.textContent=o.t;e.appendChild(op)})}
     else if(f.type==='textarea'){e=document.createElement('textarea');if(f.h)e.style.minHeight=f.h+'px'}
     else{e=document.createElement('input');e.type=(f.type==='tfile'||f.type==='files'||f.type==='anyfile'?'file':f.type)||'text';if(f.type==='number')e.step='0.01';if(f.type==='files'){e.accept=f.accept||'image/*';e.multiple=!f.cap;if(f.cap)e.setAttribute('capture','environment')}if(f.type==='anyfile')e.accept=f.accept||'*/*';if(f.type==='file')e.accept='image/*';if(f.type==='tfile')e.accept='.json,.txt,.md,.csv,text/*,application/json'}
@@ -1097,6 +1143,7 @@ function form(title,fields,cb,okText){
       else if(f.type==='files'){v[f.k]=Array.prototype.slice.call(e.files||[])}
       else if(f.type==='anyfile'){v[f.k]=(e.files&&e.files[0])||null}
       else if(f.type==='tfile'){if(e.files[0]){pend++;var fr=new FileReader();fr.onload=function(){v[f.k]=fr.result;if(!--pend)done()};fr.readAsText(e.files[0])}}
+      else if(f.type==='checks'){v[f.k]=Array.prototype.slice.call(e.querySelectorAll('input:checked')).map(function(i){return i.value})}
       else v[f.k]=e.value});
     if(!pend)done()};
   $('gNo').onclick=function(){$('gsheet').classList.remove('on')};openSheet('gsheet');
@@ -1116,9 +1163,9 @@ $('subBack').onclick=function(){if(subStack.length){page=subStack.pop();drawSub(
 $('m_pay').onclick=function(){openSub('pay')};$('m_mom').onclick=function(){openSub('mom')};
 $('m_cards').onclick=function(){openSub('cards')};$('m_set').onclick=function(){openSub('set')};
 function drawSub(){if(!page||!sub.classList.contains('on'))return;
-  var T={pay:'Pay and Services',mom:'Moments',cards:'Stores and Cards',set:'Settings',prof:'个人资料',chars:'Char',mem:'记忆',stk:'表情包',cset:'聊天设置',gmem:'全局记忆',srch:'搜索聊天记录',fav:'我的收藏'};
+  var T={pay:'Pay and Services',mom:'Moments',cards:'Stores and Cards',set:'Settings',prof:'个人资料',chars:'Char',mem:'记忆',stk:'表情包',cset:'聊天设置',gmem:'全局记忆',srch:'搜索聊天记录',fav:'我的收藏',wb:'世界书'};
   $('subT').textContent=T[page];addBtn.style.display=({mom:1,cards:1,prof:1,chars:1,mem:1,stk:1,gmem:1})[page]?'':'none';addBtn.textContent={mom:'发布',prof:'新建账号',chars:'创建',stk:'导入'}[page]||'添加';
-  ({pay:drawPay,mom:drawMom,cards:drawCards,set:drawSet,prof:drawProf,chars:drawChars,mem:drawMem,stk:drawStk,cset:drawCset,gmem:drawGmem,srch:drawSrch,fav:drawFav})[page]();
+  ({pay:drawPay,mom:drawMom,cards:drawCards,set:drawSet,prof:drawProf,chars:drawChars,mem:drawMem,stk:drawStk,cset:drawCset,gmem:drawGmem,srch:drawSrch,fav:drawFav,wb:drawWB})[page]();
 }
 addBtn.onclick=function(){
   if(page==='cards')return editCard(null);if(page==='prof')return newAcc();if(page==='chars')return editChar(null);if(page==='mem')return editMem(null);if(page==='stk')return importMenu();if(page==='gmem')return editGmem(null);
@@ -1181,8 +1228,8 @@ function editCard(c){
 /* Settings */
 function drawSet(){
   sb.innerHTML='<div class="card" id="sc"></div>';
-  [['sliders','AI 接口',openApi],['up','导出数据',exportData],['down','导入数据',importData]].forEach(function(x){
-    var r=document.createElement('div');r.className='mr';r.innerHTML='<svg class="i ic2"><use href="#'+x[0]+'"/></svg>'+x[1]+'<svg class="i ch"><use href="#chev"/></svg>';
+  [['sliders','AI 接口',openApi],['file','世界书',function(){openSub('wb')}],['pin','界面：底栏高度',openNb],['up','导出数据',exportData],['down','导入数据',importData]].forEach(function(x){
+    var r=document.createElement('div');r.className='mr';r.innerHTML='<svg class="i ic2"><use href="#'+x[0]+'"/></svg><i class="lb">'+x[1]+'</i><svg class="i ch"><use href="#chev"/></svg>';
     if(x[0]==='trash')r.style.color='#c0392b';r.onclick=x[2];$('sc').appendChild(r)})}
 
 
@@ -1342,8 +1389,9 @@ function fit(){
   var app=$('app'),de=document.documentElement,w=de.clientWidth,cs=getComputedStyle(de);
   var h=window.innerHeight-(parseFloat(cs.paddingTop)||0)-(parseFloat(cs.paddingBottom)||0);
   var sc=w<=600?Math.max(.8,Math.min(w/390,1.4)):1;
-  app.style.maxWidth='none';app.style.width='390px';app.style.zoom=sc;app.style.height=Math.max(h/sc,600)+'px'}
-window.addEventListener('resize',fit);window.addEventListener('orientationchange',fit);fit();
+  app.style.maxWidth='none';app.style.width='390px';app.style.zoom=sc;app.style.height=Math.max(h/sc,480)+'px'}
+function applyNb(){var ios=/iPhone|iPad|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);document.documentElement.style.setProperty('--nb',((ios?30:12)+(Number(cfg.nbx)||0))+'px')}
+window.addEventListener('resize',fit);window.addEventListener('orientationchange',fit);fit();applyNb();
 
 /* ===== 全屏：安卓 Chrome 首次点击进入；也可在“我的”页底部开关 ===== */
 function fsOn(){return !!(document.fullscreenElement||document.webkitFullscreenElement)}
@@ -1601,7 +1649,7 @@ function drawCset(){
   h.querySelector('p').textContent=cur.persona?cur.persona.replace(/\s+/g,' ').slice(0,60)+(cur.persona.length>60?'…':''):'还没有设置人设，点下面的“编辑 Char”写一写';
   function row(box,icon,label,detail,fn,red){
     var r=document.createElement('div');r.className='mr';
-    r.innerHTML='<svg class="i ic2"><use href="#'+icon+'"/></svg>';r.appendChild(document.createTextNode(label));
+    r.innerHTML='<svg class="i ic2"><use href="#'+icon+'"/></svg>';var lb=document.createElement('i');lb.className='lb';lb.textContent=label;r.appendChild(lb);
     if(detail){var d=document.createElement('em');d.className='dtl';d.textContent=detail;r.appendChild(d)}
     r.insertAdjacentHTML('beforeend','<svg class="i ch"><use href="#chev"/></svg>');
     if(red)r.style.color='#c0392b';r.onclick=fn;$(box).appendChild(r)}
@@ -1610,6 +1658,7 @@ function drawCset(){
   row('cs0','smile','我的昵称和头像（对 TA）',cur.unick||(cur.uav?'专属头像':'账号默认'),editUserLook);
   row('cs0','smile','TA 可以自己换头像',cur.noav?'关':'开',function(){cur.noav=!cur.noav;LS.set('contacts',contacts);drawSub()});
   if(cur.avOrig!==undefined)row('cs0','regen','恢复 TA 原来的头像','',function(){cur.av=cur.avOrig;delete cur.avOrig;LS.set('contacts',contacts);setHead();drawSub();onCharSaved();toast('已恢复')});
+  row('cs0','file','世界书',getWB().books.filter(function(b){return bookApplies(b,cur)}).length+' 本生效',bindWB);
   row('cs0','users','我的人设（对 TA）',cur.upersona?'本角色专属':(prof.persona?'账号默认':'未设置'),editUserPersona);
   row('cs1','layers','记忆',m.items.length+' 条',function(){openSub('mem')});
   row('cs1','smile','表情包',stks.length+' 个',function(){openSub('stk')});
@@ -1770,7 +1819,7 @@ async function callTurn(text){
   var h=apiHist(hh);if(!text)h.push({role:'user',content:'（电话接通了）'});
   if(kind==='video'&&CL.vision&&cfg.vision!==false&&text){var fr=grabFrame();
     if(fr&&h.length&&h[h.length-1].role==='user'){var lt=h[h.length-1];lt.content=[{t:'text',v:(typeof lt.content==='string'?lt.content:'')+'（视频通话中，附上对方此刻的画面）'},{t:'img',v:fr}]}}
-  var sys=(sysFor(c)+memBlock(c,hh)+callX(kind,!text)+timeBlock(hh)).trim();
+  var sys=(sysFor(c,hh)+memBlock(c,hh)+callX(kind,!text)+timeBlock(hh)).trim();
   var buf='',lines=[],q=0,streamDone=false,fin=false;CL.ctl=new AbortController();
   function end(){
     if(fin)return;fin=true;CL.speaking=false;$('call').classList.remove('sp');
@@ -1853,7 +1902,7 @@ function importMenu(){
     if(!files.length&&!list.length){toast('还没有选择图片，也没有填写链接');return false}
     doImportStk(files,list)},'导入')}
 
-var APP_VER='2026-10-12 · 聊天记录导入导出/日期跳转版';
+var APP_VER='2026-10-17 · 世界书 / 修复溢出与底栏版';
 $('ver').textContent='版本 '+APP_VER;
 
 /* ===== 从 docx / pptx / xlsx / zip 里批量提取表情包 ===== */
@@ -1981,7 +2030,7 @@ async function applyAvatar(c,hh,a){
 
 /* ===== 通用行 ===== */
 function mrow(box,icon,label,detail,fn,red){
-  var r=document.createElement('div');r.className='mr';r.innerHTML='<svg class="i ic2"><use href="#'+icon+'"/></svg>';r.appendChild(document.createTextNode(label));
+  var r=document.createElement('div');r.className='mr';r.innerHTML='<svg class="i ic2"><use href="#'+icon+'"/></svg>';var lb=document.createElement('i');lb.className='lb';lb.textContent=label;r.appendChild(lb);
   if(detail){var d=document.createElement('em');d.className='dtl';d.textContent=detail;r.appendChild(d)}
   r.insertAdjacentHTML('beforeend','<svg class="i ch"><use href="#chev"/></svg>');if(red)r.style.color='#c0392b';r.onclick=fn;box.appendChild(r)}
 
@@ -2153,6 +2202,134 @@ function importChat(){
     if(!list.length){toast('没有识别到聊天记录，请使用本应用导出的 json / txt');return false}
     if(v.m==='rep'){setTimeout(function(){ask('用导入的 '+list.length+' 条消息替换当前聊天？现有的 '+hist.length+' 条会被清空。',function(){applyImport(list,'rep')})},60);return}
     applyImport(list,'add')},'导入')}
+
+
+/* ===== 底栏高度 ===== */
+function openNb(){
+  form('底栏高度',[{k:'n',label:'底部导航栏离屏幕底边的距离（iPhone 默认已经抬高了一些）',type:'select',options:[{v:-8,t:'低一点'},{v:0,t:'默认'},{v:12,t:'高一点'},{v:24,t:'再高一点'},{v:36,t:'很高'}],value:Number(cfg.nbx)||0}],function(v){cfg.nbx=+v.n;LS.set('cfg',cfg);applyNb();toast('已保存')},'保存')}
+
+/* ===== 世界书：全局 / 局部，黑白文件夹卡片；会随聊天一起发给模型 ===== */
+var wbOpen={};
+function wid(p){return(p||'w')+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
+function getWB(){var w=LS.get('wb',null);if(!w)w={books:[]};if(!w.books)w.books=[];return w}
+function saveWB(w){LS.set('wb',w)}
+function bookApplies(b,c){return b.on!==false&&(b.scope!=='local'||(!!c&&(b.cids||[]).indexOf(c.id)>-1))}
+function wbText(c,hh){
+  var ctx=(hh||[]).slice(-8).map(function(m){return String(m.content||'')}).join('\n').toLowerCase(),out=[],size=0;
+  getWB().books.filter(function(b){return bookApplies(b,c)}).sort(function(a,b){return(a.scope==='local')-(b.scope==='local')}).forEach(function(b){
+    (b.entries||[]).forEach(function(e){
+      if(e.on===false)return;
+      var hit=e.mode!=='key'||String(e.keys||'').split(/[,，、;；\s]+/).filter(Boolean).some(function(k){return ctx.indexOf(k.toLowerCase())>-1});
+      if(!hit)return;var t=String(e.content||'').slice(0,3000);if(!t.trim()||size+t.length>8000)return;size+=t.length;
+      out.push('《'+b.name+(e.name?'·'+e.name:'')+'》\n'+t)})});
+  return out.length?'\n\n【世界书】以下是这个世界的设定、背景和规则，请自然地遵循，不要生硬复述，也不要提到“世界书”：\n'+out.join('\n\n'):''}
+function mutBook(id,fn){var w=getWB(),b=w.books.filter(function(x){return x.id===id})[0];if(b){fn(b,w);saveWB(w)}}
+function swEl(on,fn){var s=document.createElement('span');s.className='sw'+(on?' on':'');s.onclick=function(e){e.stopPropagation();var v=!s.classList.contains('on');s.classList.toggle('on',v);fn(v)};return s}
+function drawWB(){
+  var w=getWB();
+  sb.innerHTML='<div class="wbh"><b>WORLD BOOK</b><small>全局世界书对所有角色生效；局部世界书只对绑定的角色生效。“常驻”条目每次都会发给 AI，“关键词”条目只有最近聊天里出现了触发词才会发。</small></div><div class="wbt"><button type="button" id="wbN">＋ 新建世界书</button><button type="button" id="wbI">导入</button><button type="button" id="wbX">导出全部</button></div><div id="wbg"></div>';
+  $('wbN').onclick=function(){editBook(null)};$('wbI').onclick=importWB;$('wbX').onclick=function(){exportWB(null)};
+  var box=$('wbg');
+  [['global','全局世界书'],['local','局部世界书']].forEach(function(g){
+    var bs=w.books.filter(function(b){return(b.scope==='local'?'local':'global')===g[0]});
+    var h=document.createElement('div');h.className='wbs';h.textContent=g[1]+' · '+bs.length;box.appendChild(h);
+    if(!bs.length){var e=document.createElement('div');e.className='wbe';e.textContent=g[0]==='global'?'还没有全局世界书':'还没有局部世界书';box.appendChild(e)}
+    bs.forEach(function(b){box.appendChild(folderEl(b))})})}
+function folderEl(b){
+  var f=document.createElement('div');f.className='fd'+(wbOpen[b.id]?' open':'')+(b.on===false?' off':'');
+  var sc=b.scope==='local'?'局部 · '+((b.cids||[]).map(function(id){var c=findC(id);return c?dn(c):null}).filter(Boolean).join('、')||'还没绑定角色'):'全局 · 所有角色';
+  f.innerHTML='<div class="fdt"></div><div class="fdb"><div class="fdh"><div class="fdn"><b></b><small></small></div></div><div class="fdc"></div></div>';
+  f.querySelector('b').textContent=b.name||'未命名世界书';f.querySelector('small').textContent=(b.entries||[]).length+' 个条目 · '+sc;
+  var hd=f.querySelector('.fdh');hd.appendChild(swEl(b.on!==false,function(v){mutBook(b.id,function(x){x.on=v});f.classList.toggle('off',!v)}));
+  hd.onclick=function(){var o=!f.classList.contains('open');f.classList.toggle('open',o);wbOpen[b.id]=o};
+  var c=f.querySelector('.fdc');
+  (b.entries||[]).forEach(function(e){
+    var card=document.createElement('div');card.className='fl2';
+    card.innerHTML='<b></b><div class="tgs"></div><p></p>';card.querySelector('b').textContent=e.name||'（未命名条目）';
+    var tg=document.createElement('span');tg.className='tg';tg.textContent=e.mode==='key'?'关键词':'常驻';card.querySelector('.tgs').appendChild(tg);
+    if(e.mode==='key'&&e.keys){var kk=document.createElement('span');kk.className='tg k';kk.textContent=String(e.keys).slice(0,24);card.querySelector('.tgs').appendChild(kk)}
+    card.querySelector('p').textContent=e.content;
+    card.appendChild(swEl(e.on!==false,function(v){mutBook(b.id,function(x){(x.entries||[]).forEach(function(y){if(y.id===e.id)y.on=v})})}));
+    card.onclick=function(){editEntry(b,e)};c.appendChild(card)});
+  if(!(b.entries||[]).length){var em=document.createElement('div');em.className='wbe2';em.textContent='这本世界书还是空的';c.appendChild(em)}
+  var ac=document.createElement('div');ac.className='fda';
+  [['＋ 条目',function(){editEntry(b,null)}],['编辑',function(){editBook(b)}],['导出',function(){exportWB(b)}],['删除',function(){ask('删除世界书「'+b.name+'」及其全部条目？',function(){var w=getWB();w.books=w.books.filter(function(x){return x.id!==b.id});saveWB(w);drawSub()})},1]].forEach(function(x){
+    var bt=document.createElement('button');bt.type='button';bt.textContent=x[0];if(x[2])bt.className='red';bt.onclick=function(e){e.stopPropagation();x[1]()};ac.appendChild(bt)});
+  c.appendChild(ac);return f}
+function editBook(b){
+  var cs=contacts.map(function(c){return{v:c.id,t:dn(c)}});
+  form(b?'编辑世界书':'新建世界书',[
+    {k:'n',label:'名称',value:b?b.name:''},
+    {k:'sc',label:'范围',type:'select',options:[{v:'global',t:'全局：对所有角色生效'},{v:'local',t:'局部：只对下面勾选的角色生效'}],value:b?(b.scope==='local'?'local':'global'):'global'},
+    {k:'cs',label:'局部世界书绑定的角色（范围选“局部”时才有用）',type:'checks',options:cs,value:b?(b.cids||[]):[]}],function(v){
+    var n=v.n.trim();if(!n){toast('请填写名称');return false}
+    var w=getWB();
+    if(b){var x=w.books.filter(function(y){return y.id===b.id})[0];if(x){x.name=n.slice(0,30);x.scope=v.sc;x.cids=v.cs||[]}}
+    else{var nb={id:wid('b'),name:n.slice(0,30),scope:v.sc,cids:v.cs||[],on:true,entries:[]};w.books.push(nb);wbOpen[nb.id]=true}
+    saveWB(w);drawSub()},'保存')}
+function editEntry(b,e){
+  form(e?'编辑条目':'新建条目',[
+    {k:'n',label:'条目名称（可选）',value:e?e.name:''},
+    {k:'m',label:'触发方式',type:'select',options:[{v:'always',t:'常驻：每次都发给 AI'},{v:'key',t:'关键词：最近聊天里出现触发词才发'}],value:e&&e.mode==='key'?'key':'always'},
+    {k:'k',label:'触发词（关键词模式用；用逗号分隔，如：学院，上课）',value:e?(e.keys||''):''},
+    {k:'t',label:'内容（会原样发给 AI，建议一条写一个设定）',type:'textarea',h:170,value:e?e.content:''},
+    {k:'pf',label:'从文件导入内容（txt / md / json，追加在后面，可选）',type:'tfile'}],function(v){
+    var t=v.t.trim();if(v.pf)t=(t?t+'\n\n':'')+v.pf.trim().slice(0,12000);
+    if(!t){toast('请填写内容');return false}
+    if(v.m==='key'&&!v.k.trim()){toast('关键词模式需要填写触发词');return false}
+    mutBook(b.id,function(x){x.entries=x.entries||[];
+      if(e){x.entries.forEach(function(y){if(y.id===e.id){y.name=v.n.trim().slice(0,30);y.mode=v.m;y.keys=v.k.trim();y.content=t}})}
+      else x.entries.push({id:wid('e'),name:v.n.trim().slice(0,30),mode:v.m,keys:v.k.trim(),content:t,on:true})});
+    wbOpen[b.id]=true;drawSub()},'保存')}
+function bindWB(){
+  var w=getWB(),loc=w.books.filter(function(b){return b.scope==='local'}),gl=w.books.filter(function(b){return b.scope!=='local'&&b.on!==false});
+  if(!w.books.length){toast('还没有世界书，先到 设置 → 世界书 新建');return}
+  form('这个角色用到的世界书',[{k:'b',label:'全局世界书（现有 '+gl.length+' 本）自动生效。下面勾选的局部世界书会绑定到这个角色：',type:'checks',options:loc.map(function(b){return{v:b.id,t:b.name}}),value:loc.filter(function(b){return(b.cids||[]).indexOf(cur.id)>-1}).map(function(b){return b.id})}],function(v){
+    var ch=v.b||[];
+    loc.forEach(function(b){var has=(b.cids||[]).indexOf(cur.id)>-1,want=ch.indexOf(b.id)>-1;
+      if(want&&!has)b.cids=(b.cids||[]).concat(cur.id);else if(!want&&has)b.cids=b.cids.filter(function(id){return id!==cur.id})});
+    saveWB(w);drawSub();toast('已保存')},'保存')}
+function normEntry(e){
+  if(!e||typeof e!=='object')return null;
+  var keys=e.keys!=null?e.keys:(e.key!=null?e.key:(e.keywords!=null?e.keywords:''));
+  if(Array.isArray(keys))keys=keys.join('，');keys=String(keys||'').trim();
+  var content=String(e.content!=null?e.content:(e.text!=null?e.text:'')).trim();if(!content)return null;
+  var always=e.mode==='always'||e.constant===true||(e.mode!=='key'&&!keys);
+  return{id:wid('e'),name:String(e.name||e.comment||e.title||'').slice(0,30),mode:always?'always':'key',keys:keys,content:content,on:!(e.on===false||e.disable===true||e.enabled===false)}}
+function parseWB(text,fname,sc){
+  text=String(text||'').trim();var base=String(fname||'导入的世界书').replace(/\.[^.]+$/,'').slice(0,30),out=[];if(!text)return out;
+  var mk=function(name,ents,scope){return{id:wid('b'),name:name||base,scope:scope||sc||'global',cids:[],on:true,entries:ents}};
+  try{var j=JSON.parse(text);
+    if(j&&Array.isArray(j.books)){j.books.forEach(function(b){var ents=(b.entries||[]).map(normEntry).filter(Boolean);if(ents.length)out.push(mk(b.name,ents,b.scope==='local'?'local':'global'))});return out}
+    var e0=j&&j.entries?(Array.isArray(j.entries)?j.entries:Object.keys(j.entries).map(function(k){return j.entries[k]})):(Array.isArray(j)?j:null);
+    if(e0){var ents1=e0.map(normEntry).filter(Boolean);if(ents1.length){out.push(mk(j.name||base,ents1));return out}}
+  }catch(x){}
+  var secs=text.split(/\n(?=【[^】\n]{2,30}】)|\n(?=#{1,2}\s)/);
+  if(secs.length>1&&secs.length<=60){
+    var ents2=secs.map(function(sec){var m=sec.match(/^(?:【([^】\n]+)】|#{1,2}\s*([^\n]+))/);return normEntry({name:m?(m[1]||m[2]).trim():'',content:sec.trim()})}).filter(Boolean);
+    if(ents2.length>1){out.push(mk(base,ents2));return out}}
+  out.push(mk(base,[normEntry({name:base,content:text})]));return out}
+function importWB(){
+  form('导入世界书',[
+    {k:'f',label:'选择世界书文件（txt / md / json / docx；也支持酒馆 SillyTavern 的世界书 json）',type:'anyfile',accept:'.txt,.md,.json,.docx,.csv'},
+    {k:'t',label:'或直接粘贴内容',type:'textarea',h:90,ph:'粘贴世界书文本或 json…'},
+    {k:'sc',label:'导入为',type:'select',options:[{v:'global',t:'全局世界书'},{v:'local',t:'局部世界书（之后到聊天设置里绑定角色）'}],value:'global'}],function(v){
+    if(!v.f&&!(v.t||'').trim()){toast('请选择文件或粘贴内容');return false}
+    doImportWB(v.f,(v.t||'').trim(),v.sc)},'导入')}
+async function doImportWB(f,t,sc){
+  var text=t,name=f?f.name:'导入的世界书';
+  if(f){var r=await readFileText(f);if(r.err||!r.text){toast(r.err||'没有读到内容');return}text=r.text}
+  var books=parseWB(text,name,sc);
+  if(!books.length){toast('没有识别到世界书内容');return}
+  var w=getWB(),n=0;books.forEach(function(b){w.books.push(b);n+=b.entries.length;wbOpen[b.id]=false});saveWB(w);
+  if(page==='wb'&&sub.classList.contains('on'))drawSub();
+  notice('已导入 '+books.length+' 本世界书，共 '+n+' 个条目。\n可以在世界书页里点开文件夹查看和修改。')}
+function exportWB(b){
+  var w=getWB(),data=JSON.stringify({type:'worldbook',books:b?[b]:w.books},null,1);
+  form(b?'导出世界书':'导出全部世界书',[{k:'data',label:'点“复制 / 下载”，或长按文本全选复制，保存到备忘录 / 文件里',type:'textarea',h:220,value:data}],function(v){
+    copyText(v.data);
+    try{var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v.data],{type:'application/json'}));a.download=(b?b.name:'worldbooks')+'.json';document.body.appendChild(a);a.click();a.remove()}catch(e){}
+    return false},'复制 / 下载')}
 
 render();
 </script>
